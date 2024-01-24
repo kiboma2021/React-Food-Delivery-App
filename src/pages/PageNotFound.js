@@ -1,5 +1,5 @@
 
-export const Home = () => {
+export const PageNotFound = () => {
   return (
     <div>
       
