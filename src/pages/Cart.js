@@ -2,7 +2,9 @@
 export const Cart = () => {
   return (
     <div>
-      cat
+      <div>
+        
+      </div>
       
     </div>
   )

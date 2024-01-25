@@ -1,4 +1,5 @@
 import { Card } from "../components"
+import { useTitle } from "../hooks/useTitle"
 import Potato from "../assets/potato.jpg"
 import FoodMeat from "../assets/FoodMeat.jpg"
 import Food_at_WIkimanian_2017_02 from "../assets/Food_at_WIkimanian_2017_02.jpg"
@@ -6,7 +7,8 @@ import Ribs from "../assets/Ribs.jpg"
 import Awadhi_prawns from "../assets/Awadhi_prawns.jpg"
 import GlazedDonut from "../assets/Glazed-Donut.jpg"
 
-export const Home = () => {
+
+export const Home = ({title}) => {
   const fooditems = [
     {
     "id": 1, 
@@ -53,6 +55,10 @@ export const Home = () => {
 
 
   ]
+
+  useTitle({title});
+
+  
   return (
     <div className="flex flex-wrap gap-10 m-10">
       { fooditems && fooditems.map((food)=>(
