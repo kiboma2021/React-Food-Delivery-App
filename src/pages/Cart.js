@@ -1,12 +1,15 @@
+import { useCart } from "../context/CartContext"
+
 import image1 from "../assets/Awadhi_prawns.jpg"
 import image2 from "../assets/Ribs.jpg"
 
 
 export const Cart = () => {
+  const { total } = useCart()
   return (
     <main>
         <div className='flex justify-center my-8'>
-            <p className='text-2xl font-bold'>Cart Items: 0 | Kes 2,542  </p>
+            <p className='text-2xl font-bold'>Cart Items: {total} | Kes 2,542  </p>
         </div>
 
         <div className='mx-40 '>
