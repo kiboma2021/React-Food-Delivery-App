@@ -4,8 +4,10 @@ import './App.css';
 
 function App() {
   return (
-    <main>
+    <main className='mx-10'>
       <Header />
+      <hr />
+      
       <AllRoutes />
     </main>
 
