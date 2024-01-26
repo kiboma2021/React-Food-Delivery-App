@@ -14,6 +14,7 @@ export const CartProvider =({children})=> {
 
     const addToCart =(order)=>{
         const updatedCart = state.cartList.concat(order);
+        updateTotal(updatedCart);
         dispatch({
             type: "ADD_TO_CART",
             payload: {
@@ -24,6 +25,7 @@ export const CartProvider =({children})=> {
 
     const removeItemFromCart=(cart_item) => {
         const updatedCart = state.cartList.filter(item => item.id !== cart_item.id);
+        updateTotal(updatedCart);
         dispatch({
             type: "REMOVE_FROM_CART",
             payload: {
@@ -31,12 +33,25 @@ export const CartProvider =({children})=> {
             }
         })
     }
+
+    const updateTotal = (cartList) => {
+        let total = 0;
+        cartList.forEach(item => (total = total + item.price));
+        dispatch({
+            type: "UPDATE_TOTAL",
+            payload: {
+                total
+            }
+        })       
+        };
+
     const value = {
         total: state.total,
         cartList:state.cartList,
         addToCart,
         removeItemFromCart
     }
+    
     return (
         <CartContext.Provider value={value}>
             {children}

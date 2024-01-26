@@ -1,11 +1,11 @@
 import { useCart } from "../context/CartContext"
 
 export const Cart = () => {
-  const { cartList,removeItemFromCart } = useCart()
+  const { cartList,removeItemFromCart,total } = useCart()
   return (
     <main>
         <div className='flex justify-center my-8'>
-            <p className='text-2xl font-bold'>Cart Items: {cartList.length} | $ 2,542  </p>
+            <p className='text-2xl font-bold'>Cart Items: {cartList.length} | $ {total}  </p>
         </div>
 
         <div className='mx-40 '>
