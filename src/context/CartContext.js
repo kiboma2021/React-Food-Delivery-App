@@ -14,24 +14,28 @@ export const CartProvider =({children})=> {
 
     const addToCart =(order)=>{
         const updatedCart = state.cartList.concat(order);
-
-        console.log(updatedCart);
-
         dispatch({
             type: "ADD_TO_CART",
             payload: {
                 ordered_items: updatedCart
             }
-        }
+        })
+    }
 
-        )
-
-
+    const removeItemFromCart=(cart_item) => {
+        const updatedCart = state.cartList.filter(item => item.id !== cart_item.id);
+        dispatch({
+            type: "REMOVE_FROM_CART",
+            payload: {
+                ordered_items: updatedCart
+            }
+        })
     }
     const value = {
         total: state.total,
         cartList:state.cartList,
-        addToCart
+        addToCart,
+        removeItemFromCart
     }
     return (
         <CartContext.Provider value={value}>

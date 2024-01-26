@@ -7,7 +7,7 @@ export const cartReducer =(state, action)=>{
             return {...state, cartList: payload.ordered_items}
 
         case "REMOVE_FROM_CART":
-            return
+            return {...state, cartList: payload.ordered_items}
 
         case "UPDATE_TOTAL":
             return

@@ -1,7 +1,7 @@
 import { useCart } from "../context/CartContext"
 
 export const Cart = () => {
-  const { total,cartList } = useCart()
+  const { cartList,removeItemFromCart } = useCart()
   return (
     <main>
         <div className='flex justify-center my-8'>
@@ -19,7 +19,7 @@ export const Cart = () => {
                     <p className='m-5'>{order.name}</p>
                     <p className='m-5'>${order.price}</p>
                     <div>
-                    <span className='bg-red-600 p-2 m-2 rounded text-white'>Remove</span>
+                    <span onClick={()=>removeItemFromCart(order)} className='bg-red-600 p-2 m-2 rounded text-white'>Remove</span>
                     </div>
                 </div>
                 ))}
