@@ -1,39 +1,30 @@
 import { useCart } from "../context/CartContext"
 
-import image1 from "../assets/Awadhi_prawns.jpg"
-import image2 from "../assets/Ribs.jpg"
-
-
 export const Cart = () => {
-  const { total } = useCart()
+  const { total,cartList } = useCart()
   return (
     <main>
         <div className='flex justify-center my-8'>
-            <p className='text-2xl font-bold'>Cart Items: {total} | Kes 2,542  </p>
+            <p className='text-2xl font-bold'>Cart Items: {cartList.length} | $ 2,542  </p>
         </div>
 
         <div className='mx-40 '>
-            <div className='flex flex-wrap justify-around m-5 p-5 border-4 border-gray-200 items-center'>
-                <div className='w-32'  >
-                    <img src={image1} alt="Cart" />
-                </div>
-                <p className='m-5'>Shrimp and prawn</p>
-                <p className='m-5'>$145</p>
-                <div>
-                    <span className='bg-red-600 p-2 m-2 rounded'>Remove</span>
-                </div>
-            </div>
 
-            <div className='flex flex-wrap justify-around m-5 p-5 border-4 border-gray-200 items-center'>
-                <div className='w-32'  >
-                    <img src={image2} alt="Cart" />
+                {cartList && cartList.map(order=>(
+                <div className='flex flex-wrap justify-around m-5 p-5 border-4 border-gray-200 items-center'>
+
+                    <div className='w-32'  >
+                    <img src={order.image} alt={order.name} />
+                    </div>
+                    <p className='m-5'>{order.name}</p>
+                    <p className='m-5'>${order.price}</p>
+                    <div>
+                    <span className='bg-red-600 p-2 m-2 rounded text-white'>Remove</span>
+                    </div>
                 </div>
-                <p className='m-5'>Ribs</p>
-                <p className='m-5'>$145</p>
-                <div>
-                    <span className='bg-red-600 p-2 m-2 rounded'>Remove</span>
-                </div>
-            </div>
+                ))}
+
+
 
         </div>
 

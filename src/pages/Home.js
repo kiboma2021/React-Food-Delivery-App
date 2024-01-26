@@ -11,11 +11,11 @@ import GlazedDonut from "../assets/Glazed-Donut.jpg"
 export const Home = ({title}) => {
   const fooditems = [
     {
-    "id": 1, 
-    "name":'Mashed potatoes',
-    "description": 'Mashed potato or mashed potatoes (American, Canadian and Australian English), colloquially known as mash (British English),[2] is a dish made by mashing boiled or steamed potatoes, usually with added milk, butter, salt and pepper. It is generally served as a side dish to meat or vegetables. Roughly mashed potatoes are sometimes called smashed potatoes.[citation needed] Dehydrated instant mashed potatoes[3] and frozen mashed potatoes[4] are available. Mashed potatoes are an ingredient in other dishes, such as dumplings and gnocchi.[5][6]',
-    "price":250, 
-    "image":Potato
+    id: 1, 
+    name:'Mashed potatoes',
+    description: 'Mashed potato or mashed potatoes (American, Canadian and Australian English), colloquially known as mash (British English),[2] is a dish made by mashing boiled or steamed potatoes, usually with added milk, butter, salt and pepper. It is generally served as a side dish to meat or vegetables. Roughly mashed potatoes are sometimes called smashed potatoes.[citation needed] Dehydrated instant mashed potatoes[3] and frozen mashed potatoes[4] are available. Mashed potatoes are an ingredient in other dishes, such as dumplings and gnocchi.[5][6]',
+    price:250, 
+    image:Potato
   },
   {
     id: 2, 
